@@ -25,6 +25,7 @@ import { Component } from "@angular/core";
     <input type="text" #email (keyup.enter)="onKeyup(email.value)"/>
     <h3>OnkeyDown voorbeeld:</h3>
     <input [(ngModel)]="email2" (keydown.enter)="onKeydown()" />
+    {{text | summarypipe}}
     `
 })
 export class CoursesComponent{
@@ -34,6 +35,7 @@ export class CoursesComponent{
     colSpan: number = 20;
     isActive : boolean;
     email2: string = "yourname@example.com";
+    text: string = "Lorem Ipsum is slechts een proeftekst uit het drukkerij- en zetterijwezen. Lorem Ipsum is de standaard proeftekst in deze bedrijfstak sinds de 16e eeuw, toen een onbekende drukker een zethaak met letters nam en ze door elkaar husselde om een font-catalogus te maken. Het heeft niet alleen vijf eeuwen overleefd maar is ook, vrijwel onveranderd, overgenomen in elektronische letterzetting. Het is in de jaren '60 populair geworden met de introductie van Letraset vellen met Lorem Ipsum passages en meer recentelijk door desktop publishing software zoals Aldus PageMaker die versies van Lorem Ipsum bevatten.";
 
     constructor(service: CoursesService){
        // let service = new CoursesService();
